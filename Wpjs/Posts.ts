@@ -1,10 +1,7 @@
-﻿/// <reference path="Models.ts" />
-/// <reference path="Wpjs.ts" />
-
-module Wpjs {
+﻿module Wpjs {
     export class Posts {
         private m_data: Post[];
-        private m_wpjs: Wpjs.Wordpress;
+        private m_wpjs: Wordpress;
         /**
          * Constructor for Posts object
          * 

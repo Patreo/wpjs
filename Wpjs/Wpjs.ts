@@ -1,11 +1,5 @@
-﻿/// <reference path="Error.ts" />
-/// <reference path="Models.ts" />
-/// <reference path="Post.ts" />
-/// <reference path="Posts.ts" />
-
-module Wpjs {
+﻿module Wpjs {
    
-
     export class Wordpress {       
         private baseUrl: string;
         private nonce: string;
@@ -88,7 +82,7 @@ module Wpjs {
             return response;
         }
 
-        public posts(args: { context?: string, page?: string, per_page?: string, filter?: string },
+        public posts(args: { context?: string; page?: number; per_page?: number; filter?: string },
             callback: (posts: Posts, error: Error) => void): void {
 
             if (!args.context) {
@@ -106,7 +100,7 @@ module Wpjs {
 
         }
 
-        public pages(args: { context?: string, page?: string, per_page?: string, filter?: string },
+        public pages(args: { context?: string; page?: number; per_page?: number; filter?: string },
             callback: (posts: Posts, error: Error) => void): void {
 
             if (!args.context) {
@@ -124,7 +118,7 @@ module Wpjs {
 
         }
 
-        public media(args: { context?: string, page?: string, per_page?: string, filter?: string },
+        public media(args: { context?: string; page?: number; per_page?: number; filter?: string },
             callback: (posts: Posts, error: Error) => void): void {
 
             if (!args.context) {
@@ -156,7 +150,7 @@ module Wpjs {
 
         }
 
-        public categories(args: { page?: number, per_page?: number, search?: string, context?: string, order?: string, orderby?: string, hide_empty?: boolean, parent?: number },
+        public categories(args: { page?: number; per_page?: number; search?: string; context?: string; order?: string; orderby?: string; hide_empty?: boolean; parent?: number },
             callback: (posts: Posts, error: Error) => void): void {
 
             if (!args.page) {
@@ -181,7 +175,7 @@ module Wpjs {
         }
 
 
-        public users(args: { page?: number, per_page?: number, search?: string, context?: string, order?: string, orderby?: string },
+        public users(args: { page?: number; per_page?: number; search?: string; context?: string; order?: string; orderby?: string },
             callback: (posts: Posts, error: Error) => void): void {
 
             if (!args.page) {
@@ -205,7 +199,7 @@ module Wpjs {
             }
         }
 
-        public comments(args: { context?: string, page?: string, per_page?: string, search?: string, author_email?: string, karma?: number, parent?: number, post?: number, post_author?: string, post_slug?: string, post_status?: string, post_type?: string, status?: string, type?: string, user?: string },
+        public comments(args: { context?: string; page?: number; per_page?: number; search?: string; author_email?: string; karma?: number; parent?: number; post?: number; post_author?: string; post_slug?: string; post_status?: string; post_type?: string; status?: string; type?: string; user?: string },
             callback: (posts: Posts, error: Error) => void): void {
           
             if (!args.page) {

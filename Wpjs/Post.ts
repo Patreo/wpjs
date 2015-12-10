@@ -1,10 +1,7 @@
-﻿/// <reference path="Models.ts" />
-/// <reference path="Wpjs.ts" />
-
-module Wpjs {
-    export class Post {
+﻿module Wpjs {
+    export class Post implements IStorageObject {
         private m_data: PostModel;
-        private m_wpjs: Wpjs.Wordpress;
+        private m_wpjs: Wordpress;
         /**
         * Constructor for Post object
         * 
@@ -25,39 +22,7 @@ module Wpjs {
         }
 
         public save(): void {
-            var type: string;
-            var url: string;
-
-            if (!this.m_data.id) {
-                type = "POST";
-            } else {
-                type = "PUT";
-            }
-
-            this.m_wpjs.xhr(type, {
-                url: url,
-                data: JSON.stringify({
-                    date: this.m_data.date,
-                    date_gmt: this.m_data.date_gmt,
-                    modified: this.m_data.modified,
-                    modified_gmt: this.m_data.modified_gmt,
-                    password: this.m_data.password,
-                    slug: this.m_data.slug,
-                    status: this.m_data.status,
-                    title: this.m_data.title,
-                    content: this.m_data.content,
-                    author: this.m_data.author,
-                    excerpt: this.m_data.excerpt,
-                    featured_image: this.m_data.featured_image,
-                    comment_status: this.m_data.comment_status,
-                    ping_status: this.m_data.ping_status,
-                    format: this.m_data.format,
-                    sticky: this.m_data.sticky,
-                })
-            }, ((response: string, error: Error) => {
-
-
-                }));
+            
         }
 
         public remove(): void {

@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Error.ts" />
+    <TypeScriptCompile Include="IStorageObject.ts" />
     <TypeScriptCompile Include="Models.ts" />
     <TypeScriptCompile Include="Post.ts" />
     <TypeScriptCompile Include="PostMeta.ts" />
